@@ -1,5 +1,5 @@
 # pybrain-tutorials
-dsfl
+
 ## motivation
 The documentation is build up in the following parts: first, there is the quickstart tutorial which aims at getting you started with PyBrain as quickly as possible. This is the right place for you if you just want get a feel for the library or if you never used PyBrain before.
 Although the quickstart uses supervised learning with neural networks as an example, this does not mean that that’s it. PyBrain is not only about supervised learning and neural networks.
@@ -10,15 +10,51 @@ If at any point the documentation does not suffice, you can always get help at t
 
 ## context
 
-## Installation
-Quick answer:
+## installation
+### Get it
 
-### for python 2.x
-  $ git clone git://github.com/pybrain/pybrain.git
-  $ python setup.py install
-Long answer: We keep more detailed installation instructions (including dependencies) up-to-date in a wiki at http://wiki.github.com/pybrain/pybrain/installation.
+Make sure you have the dependencies.
 
-### for python 3.x
-  $ pip install https://github.com/pybrain/pybrain/archive/0.3.3.zip
-  
+Option 1: If you have setuptools/easy_install, you can get the latest stable release from the cheeseshop directly, and set up automatically:
+
+	$ easy_install structure pybrain 
+
+Option 2: Download it from here. Unpack it.
+Option 3: Get the bleeding edge from the git repository:
+
+	$ git clone https://github.com/pybrain/pybrain.git 
+
+### Set it up
+
+If you have setuptools, run (you may need to do this as superuser on Unix systems):
+
+	$ python setup.py install 
+
+If the above fails, you can also try installing with pip via:
+
+	$ cd pybrain 
+	$ sudo pip install . 
+
+Alternatively run pip install . --user to install it for the current user only.
+Otherwise: Update the PYTHONPATH environment variable to include the location of pybrain. 
+
+	$ export PYTHONPATH=$PYTHONPATH:`pwd` 
+
+### Verify
+
+	$ python
+	Python 2.5.2 (r252:60911, Sep 17 2008, 11:21:23)
+	Type "help", "copyright", "credits" or "license" for more information.
+	>>> import pybrain
+	>>>
+
+Or if you want to be more thorough:
+
+	$ cd pybrain/tests
+	$ python runtests.py
+	INFO Tests found: […]
+	...............................
+	----------------------------------------------------------------------
+	Ran 31 tests in 8.749s
+	OK
   
